@@ -14,8 +14,13 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	@GetMapping("/hello")
+	public String hello() {
+		return "hello world!";
+	}
+
 	@GetMapping("/hello/{name}")
-	public String hello(@PathVariable String name) {
+	public String helloForYou(@PathVariable String name) {
 		return String.format("Hello %s!", name);
 	}
 
